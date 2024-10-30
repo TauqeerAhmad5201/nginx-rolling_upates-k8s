@@ -2,7 +2,9 @@
 
 Rolling updates in Kubernetes allow you to update your applications incrementally with zero downtime. This strategy is typically used to update the application without taking it offline. Instead of bringing down all instances of an application at once, the rolling update gradually replaces pods one by one with the new version.
 
-This README covers the basic setup and commands needed to perform rolling updates in Kubernetes.
+This README and the repo (code in yaml) covers the basic setup and commands needed to perform rolling updates in Kubernetes.
+
+We can use NodePort or LoadBalancer Service for this rollout feature.
 
 ## Prerequisites
 

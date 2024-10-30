@@ -113,10 +113,11 @@ This repository provides a summary of essential Kubernetes commands for creating
 | Command | Description |
 | ------- | ----------- |
 | `kubectl create deployment nginx-deployment --image=nginx:1.14` | Create a deployment |
-| `kubectl set image deployment/nginx-deployment nginx=nginx:1.16 --record` | Update the deployment image |
+| `kubectl set image deployment/nginx-deployment nginx=nginx:1.16` | Update the deployment image |
+| `kubectl annote deployment nginx-deployment kubernetes.io/change-cause="update image to nginx-1.16"` | Commit message for an update |
 | `kubectl rollout status deployment/nginx-deployment` | Monitor update status |
 | `kubectl rollout history deployment/nginx-deployment` | View deployment history |
-| `kubectl rollout undo deployment/nginx-deployment` | Roll back to previous version |
+| `kubectl rollout undo deployment/nginx-deployment --to-revision=<revision no>` | Roll back to previous version |
 | `kubectl get pods -l app=nginx-deployment -o wide` | Verify updated pods |
 | `minikube service nginx-deployment --url` | Access the service in Minikube |
 
